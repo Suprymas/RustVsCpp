@@ -1,0 +1,37 @@
+# --- Generated data (20 GiB, reproducible from datagen with the same seed) ---
+# MANIFEST.md is not data but the SHA-256 sums and generation parameters,
+# i.e. the reproducibility proof for the appendices - so it is kept.
+/data/*
+!/data/MANIFEST.md
+
+# --- Build artefacts ---
+target/
+target-*/
+cpp/build/
+*.o
+*.a
+cpp/matmul/matmul
+cpp/bfs/bfs
+cpp/wordfreq/wordfreq
+
+# --- Plots: reproducible from the CSVs with harness/plot_series.py ---
+*.png
+*.pdf
+
+# --- Temporary state and environment ---
+harness/.freq-state
+.venv/
+__pycache__/
+
+# --- Drafts ---
+*.docx
+gutenberg*/
+
+# --- Technical checks (--quick), not measurement results ---
+harness/results/test*
+harness/results/reps-test.csv
+
+# Stray outputs of manual runs in the program directories
+rust/*/results.csv
+cpp/*/results.csv
+CLAUDE.md

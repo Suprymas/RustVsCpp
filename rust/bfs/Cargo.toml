@@ -1,0 +1,16 @@
+[package]
+name = "bfs"
+version = "1.0.0"
+edition = "2021"
+description = "Breadth-first search benchmarks (Rust) - sequential, std::thread and Rayon versions"
+
+[dependencies]
+mimalloc = { version = "0.1", default-features = false }
+rayon = "1"
+core_affinity = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
